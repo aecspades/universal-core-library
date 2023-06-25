@@ -11,10 +11,10 @@ import org.eclipse.jdt.annotation.NonNull;
 public final class NullSafe {
 	private NullSafe() {} // Cannot instantiate
 	
-	public static @NonNull String value(String s)  {
+	public static @NonNull String nullSafe(String s)  {
 		return s !=null ? s : "";
 	}
-	public static @NonNull Integer value(Integer i)  {
+	public static @NonNull Integer nullSafe(Integer i)  {
 		return i !=null ? i : Integer.valueOf(0);
 	}
 	/* These were a good idea, but Java is stupid and doesn't have a "GuaranteedPublicDefaultContsructor" Interface
@@ -41,10 +41,10 @@ public final class NullSafe {
 		}
 	}
 	*/
-	public static <T> @NonNull T value(T object, @NonNull NonNullSupplier<T> s) {
+	public static <T> @NonNull T nullSafe(T object, @NonNull NonNullSupplier<T> s) {
 		return object !=null ? object : s.get();
 	}
-	public static <T> @NonNull T value(T object, @NonNull T defaultValue)  {
+	public static <T> @NonNull T nullSafe(T object, @NonNull T defaultValue)  {
 		return object !=null ? object : defaultValue;
 	}
 
