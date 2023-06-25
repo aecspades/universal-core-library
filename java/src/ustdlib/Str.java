@@ -15,7 +15,6 @@ public class Str {
 	 * @param s
 	 * @return
 	 */
-	@SuppressWarnings("null")
 	public static @NonNull String trim(@NonNull String s) {
 		return s.trim();
 	}
@@ -23,7 +22,6 @@ public class Str {
 	/**
 	 * Trim whitespace from leading edge of String
 	 */
-	@SuppressWarnings("null")
 	public static @NonNull String ltrim(@NonNull String s) {
 		//return s.toString().stripLeading();
 		int slength = s.length();
@@ -36,7 +34,6 @@ public class Str {
 	/**
 	 * Trim whitespace from trailing edge of String
 	 */
-	@SuppressWarnings("null")
 	public static @NonNull String rtrim(@NonNull String s) {
 		//return s.toString().stripTrailing();
 		for (int i=s.length()-1; i>=0; i--) {
@@ -75,7 +72,6 @@ public class Str {
 	 * @return The substring of <code>str</code> beginning at the first occurrence of any of the <code>searchCharacters</code>, or "" if not found
 	 * @see Str#indexOfAny(String, String)
 	 */
-	@SuppressWarnings("null")
 	public static @NonNull String substringAtAny(@NonNull final String str, @NonNull String searchCharacters) {
 		int x = indexOfAny(str, searchCharacters);
 		return x>=0 ? str.substring(x) : "";
@@ -85,7 +81,6 @@ public class Str {
 	 * @return The substring of <code>str</code> beginning at the first occurrence of <code>searchValue</code>, or "" if not found
 	 * @see String#indexOf(String) 
 	 */
-	@SuppressWarnings("null")
 	public static @NonNull String substringAt(@NonNull final String str, @NonNull String searchValue) {
 		int x = str.indexOf(searchValue);
 		return x>=0 ? str.substring(x) : "";
@@ -105,7 +100,7 @@ public class Str {
 
 
 	/**
-	 * @return The first index of <str> that does <b>not<b> match any of the <code>searchCharacters</code>, or -1 if all characters match.
+	 * @return The first index of <code>str</code> that does <b>not</b> match any of the <code>searchCharacters</code>, or -1 if all characters match.
 	 */
 	public static int indexOfNone(@NonNull final String str, @NonNull String searchCharacters) {
 		for (int i=0; i<str.length(); i++) {
@@ -120,7 +115,6 @@ public class Str {
 	 * @return The substring of <code>str</code> beginning at the first occurrence of <b>none</b> of the <code>searchCharacters</code>, or "" if all characters found
 	 * @see Str#indexOfAny(String, String)
 	 */
-	@SuppressWarnings("null")
 	public static @NonNull String substringAtNone(@NonNull final String str, @NonNull String searchCharacters) {
 		int x = indexOfNone(str, searchCharacters);
 		return x>=0 ? str.substring(x) : "";

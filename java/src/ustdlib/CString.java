@@ -79,7 +79,6 @@ public class CString {
 	 * @see Str#cat(String, String)
 	 * @see <a href="https://en.cppreference.com/w/cpp/string/byte/strncat">strncat</a>
 	 */ 
-	@SuppressWarnings("null")
 	public static @NonNull String strnCat(@NonNull String str1, @NonNull String str2, int count) {
 		if (count<0)
 			throw new IllegalArgumentException(COUNT_GE_0);
@@ -100,7 +99,6 @@ public class CString {
 	 * @see Str#cmp(String, String)
 	 * @see <a href="https://en.cppreference.com/w/cpp/string/byte/strncmp">strncmp</a>
 	 */
-	@SuppressWarnings("null")
 	public static int strnCmp(@NonNull String str1, @NonNull String str2, int count) {
 		if (count<0)
 			throw new IllegalArgumentException(COUNT_GE_0);

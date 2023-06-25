@@ -57,7 +57,6 @@ public class SubSequence implements CharSequence, Iterable<Character> {
 	}
 	
 	protected @NonNullByDefault String toStringValue=null;
-	@SuppressWarnings("null")
 	@Override
 	public @NonNull String toString() {
 		if (toStringValue==null)

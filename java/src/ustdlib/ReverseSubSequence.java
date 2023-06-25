@@ -36,7 +36,6 @@ public class ReverseSubSequence extends SubSequence {
 		return super.charAt(length-index-1);
 	}
 
-	@SuppressWarnings("null")
 	@Override
 	public @NonNull String toString() {
 		if (toStringValue==null)

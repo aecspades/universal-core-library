@@ -12,7 +12,6 @@ public class Null {
 	public static @NonNull String safe(String s)  {
 		return s !=null ? s : "";
 	}
-	@SuppressWarnings("null")
 	public static @NonNull Integer safe(Integer i)  {
 		return i !=null ? i : Integer.valueOf(0);
 	}
