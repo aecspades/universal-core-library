@@ -94,7 +94,7 @@ BinaryOperator x1,x2 -> x3
 	 * @return Concatenated Strings
 	 */
 	public static @NonNull String StrCat(@NonNull String str1, @NonNull String str2) {
-		return Str.cat(str1, str2);
+		return Str.concat(str1, str2);
 	}
 	
 	/**

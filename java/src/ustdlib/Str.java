@@ -48,7 +48,7 @@ public final class Str {
 	 * Concatenate Strings
 	 * @see StringBuilder#append(String)
 	 */
-	public static @NonNull String cat(@NonNull String str1, @NonNull String str2) {
+	public static @NonNull String concat(@NonNull String str1, @NonNull String str2) {
 		return str1 + str2;
 	}
 
@@ -57,7 +57,7 @@ public final class Str {
 	 * Compare Strings
 	 * @see String#compareTo(String)
 	 */
-	public static int cmp(@NonNull String str1, @NonNull String str2) {
+	public static int compare(@NonNull String str1, @NonNull String str2) {
 		return str1.compareTo(str2);
 	}
 	

@@ -67,44 +67,44 @@ public final class CString {
 	}
 	
 	/** 
-	 * String concatenation - alias for {@link Str#cat(String, String)}
+	 * String concatenation - alias for {@link Str#concat(String, String)}
 	 * @see <a href="https://en.cppreference.com/w/cpp/string/byte/strcat">strcat</a>
 	 */ 
 	public static @NonNull String strCat(@NonNull String str1, @NonNull String str2) {
-		return Str.cat(str1, str2);
+		return Str.concat(str1, str2);
 	}
 	
 	private final static String COUNT_GE_0 = "count must be >=0";
 	/** 
 	 * Concatenates <code>count</code> characters of <code>str2</code> to <code>str1</code>
-	 * @see Str#cat(String, String)
+	 * @see Str#concat(String, String)
 	 * @see <a href="https://en.cppreference.com/w/cpp/string/byte/strncat">strncat</a>
 	 */ 
 	public static @NonNull String strnCat(@NonNull String str1, @NonNull String str2, int count) {
 		if (count<0)
 			throw new IllegalArgumentException(COUNT_GE_0);
 		
-		return Str.cat(str1, str2.substring(0, count));
+		return Str.concat(str1, str2.substring(0, count));
 	}
 
 	
 	/**
-	 * String compare - alias for {@link Str#cmp(String, String)}
+	 * String compare - alias for {@link Str#compare(String, String)}
 	 * @see <a href="https://en.cppreference.com/w/cpp/string/byte/strcmp">strcmp</a>
 	 */
 	public static int strCmp(@NonNull String str1, @NonNull String str2) {
-		return Str.cmp(str1, str2);
+		return Str.compare(str1, str2);
 	}
 	/**
 	 * Compares <code>count</code> characters of <code>str2</code> to <code>str1</code>
-	 * @see Str#cmp(String, String)
+	 * @see Str#compare(String, String)
 	 * @see <a href="https://en.cppreference.com/w/cpp/string/byte/strncmp">strncmp</a>
 	 */
 	public static int strnCmp(@NonNull String str1, @NonNull String str2, int count) {
 		if (count<0)
 			throw new IllegalArgumentException(COUNT_GE_0);
 		
-		return Str.cmp(str1.substring(0, count), str2.substring(0, count));
+		return Str.compare(str1.substring(0, count), str2.substring(0, count));
 	}
 	
 	
