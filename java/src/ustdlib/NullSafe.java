@@ -9,10 +9,10 @@ import org.eclipse.jdt.annotation.NonNull;
  *
  */
 public class NullSafe {
-	public static @NonNull String of(String s)  {
+	public static @NonNull String value(String s)  {
 		return s !=null ? s : "";
 	}
-	public static @NonNull Integer of(Integer i)  {
+	public static @NonNull Integer value(Integer i)  {
 		return i !=null ? i : Integer.valueOf(0);
 	}
 	/* These were a good idea, but Java is stupid and doesn't have a "GuaranteedPublicDefaultContsructor" Interface
@@ -39,7 +39,10 @@ public class NullSafe {
 		}
 	}
 	*/
-	public static <T> @NonNull T of(T object, @NonNull T defaultValue)  {
+	public static <T> @NonNull T value(T object, @NonNull NonNullSupplier<T> s) {
+		return object !=null ? object : s.get();
+	}
+	public static <T> @NonNull T value(T object, @NonNull T defaultValue)  {
 		return object !=null ? object : defaultValue;
 	}
 
@@ -51,9 +54,6 @@ public class NullSafe {
 	public static <T> @NonNull T NullSafe(T object, SafeCallable<T> c) throws Exception  {
 	*/
 
-	public static <T> @NonNull T of(T object, @NonNull NonNullSupplier<T> s) {
-		return object !=null ? object : s.get();
-	}
 
 
 }

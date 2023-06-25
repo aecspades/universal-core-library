@@ -29,16 +29,16 @@ BinaryOperator x1,x2 -> x3
 	 * @return Null-safe (guaranteed not to be null) value
 	 */
 	public static @NonNull String NullSafe(String s)  {
-		return NullSafe.of(s);
+		return NullSafe.value(s);
 	}
 	public static @NonNull Integer NullSafe(Integer i)  {
-		return NullSafe.of(i);
-	}
-	public static <T> @NonNull T NullSafe(T object, @NonNull T defaultValue)  {
-		return NullSafe.of(object, defaultValue);
+		return NullSafe.value(i);
 	}
 	public static <T> @NonNull T NullSafe(T object, @NonNull NonNullSupplier<T> s) {
-		return NullSafe.of(object, s);
+		return NullSafe.value(object, s);
+	}
+	public static <T> @NonNull T NullSafe(T object, @NonNull T defaultValue)  {
+		return NullSafe.value(object, defaultValue);
 	}
 	
 	
