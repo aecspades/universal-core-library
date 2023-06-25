@@ -28,7 +28,7 @@ public final class CStr {
 	 * @see Str#indexOfAny(String, String) 
 	 * @see <a href="https://en.cppreference.com/w/cpp/string/byte/strcspn">strcspn</a> 
 	 */
-	public static int strcSspn(@NonNull String str, @NonNull String searchCharacters) {
+	public static int strcSpn(@NonNull String str, @NonNull String searchCharacters) {
 		int x = Str.indexOfAny(str, searchCharacters);
 		return x>=0 ? x : str.length();
 	}
@@ -134,9 +134,9 @@ public final class CStr {
 		x = strSpn("abcdefg", "gfedbca"); // Should be 7 i.e. all characters match str.len()
 		
 		
-		x = strcSspn("abcdefg", "zxye"); // Should be 4 i.e. 'e' in "zxye"
+		x = strcSpn("abcdefg", "zxye"); // Should be 4 i.e. 'e' in "zxye"
 		SubSequence seq = strPBrk("abcdefg", "zxye"); // Should be "efg" i.e. 'e' in "zxye"
-		x = strcSspn("abcdefg", "zxy"); // Should be 7 i.e. no characters match str.len()
+		x = strcSpn("abcdefg", "zxy"); // Should be 7 i.e. no characters match str.len()
 		seq = strPBrk("abcdefg", "zxy"); // Should be null i.e. not found
 		
 		seq = strChr("abcdefg", 'f'); // Should be "fg"
