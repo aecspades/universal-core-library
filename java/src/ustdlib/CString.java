@@ -40,7 +40,7 @@ public final class CString {
 	 * @see SubSequence 
 	 * @see <a href="https://en.cppreference.com/w/cpp/string/byte/strpbrk">strpbrk</a> 
 	 */
-	public static @Nullable SubSequence strpBrk(@NonNull final String str, @NonNull String breakset) {
+	public static @Nullable SubSequence strPBrk(@NonNull final String str, @NonNull String breakset) {
 		int x = Str.indexOfAny(str, breakset);
 		return x>=0 ? new SubSequence(str, x) : null;
 	}
@@ -135,9 +135,9 @@ public final class CString {
 		
 		
 		x = strcSspn("abcdefg", "zxye"); // Should be 4 i.e. 'e' in "zxye"
-		SubSequence seq = strpBrk("abcdefg", "zxye"); // Should be "efg" i.e. 'e' in "zxye"
+		SubSequence seq = strPBrk("abcdefg", "zxye"); // Should be "efg" i.e. 'e' in "zxye"
 		x = strcSspn("abcdefg", "zxy"); // Should be 7 i.e. no characters match str.len()
-		seq = strpBrk("abcdefg", "zxy"); // Should be null i.e. not found
+		seq = strPBrk("abcdefg", "zxy"); // Should be null i.e. not found
 		
 		seq = strChr("abcdefg", 'f'); // Should be "fg"
 		seq = strStr("abcdefg", "def"); // Should be "defg"
