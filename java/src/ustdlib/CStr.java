@@ -4,7 +4,7 @@ import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
 
 /**
- * Wrapper class for <a href="https://en.cppreference.com/w/cpp/header/cstring">&lt;cstring&gt;</a>-like methods
+ * Utility class for <a href="https://en.cppreference.com/w/cpp/header/cstring">&lt;cstring&gt;</a>-like methods
  * 
  * @author AndrewClark
  *
