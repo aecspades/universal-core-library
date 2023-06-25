@@ -8,7 +8,8 @@ import org.eclipse.jdt.annotation.NonNull;
  * @author AndrewClark
  *
  */
-public class Str {
+public final class Str {
+	private Str() {}
 
 	/**
 	 * {@link String#trim()}

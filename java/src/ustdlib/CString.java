@@ -9,7 +9,8 @@ import org.eclipse.jdt.annotation.Nullable;
  * @author AndrewClark
  *
  */
-public class CString {
+public final class CString {
+	private CString() {}
 	
 	/**
 	 * String span

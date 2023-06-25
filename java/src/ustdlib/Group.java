@@ -10,7 +10,8 @@ import org.eclipse.jdt.annotation.NonNull;
  * @author AndrewClark
  *
  */
-public class Group {
+public final class Group {
+	private Group() {}
 	
 	@SafeVarargs
 	public static <T> int indexOf(T value, T... array) {

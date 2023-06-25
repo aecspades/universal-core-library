@@ -9,7 +9,7 @@ import org.eclipse.jdt.annotation.NonNull;
  *
  */
 public final class NullSafe {
-	private NullSafe() {} // Cannot instantiate
+	private NullSafe() {}
 	
 	public static @NonNull String nullSafe(String s)  {
 		return s !=null ? s : "";
