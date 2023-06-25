@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import ustdlib.CString;
+import ustdlib.CStr;
 
 public class CStringTest {
 
@@ -12,7 +12,7 @@ public class CStringTest {
 	public void testStrCat() {
 		String str1="abc";
 		String str2="def";
-		String s = CString.strCat(str1, str2);
+		String s = CStr.strCat(str1, str2);
 		assertEquals("abcdef", s);
 	}
 
