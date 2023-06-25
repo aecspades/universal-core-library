@@ -30,16 +30,16 @@ BinaryOperator x1,x2 -> x3
 	 * @return Null-safe (guaranteed not to be null) value
 	 */
 	public static @NonNull String NullSafe(String s)  {
-		return NullSafe.nullSafe(s);
+		return NullSafety.nullSafe(s);
 	}
 	public static @NonNull Integer NullSafe(Integer i)  {
-		return NullSafe.nullSafe(i);
+		return NullSafety.nullSafe(i);
 	}
 	public static <T> @NonNull T NullSafe(T object, @NonNull NonNullSupplier<T> s) {
-		return NullSafe.nullSafe(object, s);
+		return NullSafety.nullSafe(object, s);
 	}
 	public static <T> @NonNull T NullSafe(T object, @NonNull T defaultValue)  {
-		return NullSafe.nullSafe(object, defaultValue);
+		return NullSafety.nullSafe(object, defaultValue);
 	}
 	
 	

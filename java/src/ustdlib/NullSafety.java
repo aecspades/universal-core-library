@@ -3,13 +3,13 @@ package ustdlib;
 import org.eclipse.jdt.annotation.NonNull;
 
 /**
- * Null handling and helper methods
+ * Utility methods for null-safety enforcement
  * 
  * @author AndrewClark
  *
  */
-public final class NullSafe {
-	private NullSafe() {}
+public final class NullSafety {
+	private NullSafety() {}
 	
 	public static @NonNull String nullSafe(String s)  {
 		return s !=null ? s : "";
