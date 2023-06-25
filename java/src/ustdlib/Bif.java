@@ -5,7 +5,7 @@ import java.util.AbstractList;
 import org.eclipse.jdt.annotation.NonNull;
 
 /**
- * Static, minimal (1-line) helper methods that can be considered "Built-In Functions" i.e. should be inlined by compiler
+ * Static, minimal (1-line) utility methods that can be considered "Built-In Functions" i.e. should be inlined by compiler
  * 
  * @author AndrewClark
  *
