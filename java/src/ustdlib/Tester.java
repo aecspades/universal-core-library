@@ -78,8 +78,6 @@ public class Tester {
 	public static void main(String[] args) throws Exception {
 		
 		
-		
-		
 		String nullString = null;
 		String nullableString = "0123456789";
 		SubSequence subSequence = new SubSequence(nullableString, 4); 
