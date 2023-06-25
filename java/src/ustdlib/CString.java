@@ -151,6 +151,9 @@ public class CString {
 		s = strnCat("abc", "defghi", 3); // "abcdef"
 		s = strnCat("abc", "defghi", 0); // "abc"
 		s = strnCat("abc", "defghi", -1); // Illegal argument 
+		
+		// Suppress compiler warnings for unused local variables
+		System.out.println(s + seq + x);
 	}
 	
 

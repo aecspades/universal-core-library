@@ -1,10 +1,10 @@
 package ustdlib;
 
-import static ustdlib.Bif.*;
+import static ustdlib.Bif.IndexOf;
+import static ustdlib.Bif.NullSafe;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadMXBean;
-import java.util.Date;
 import java.util.Optional;
 import java.util.Random;
 import java.util.function.Supplier;
@@ -144,6 +144,9 @@ public class Tester {
 		int[] iarray = {1, 2, 3};
 		int x = IndexOf(2, iarray);
 		System.out.println(x);
+		
+		// Suppress compiler warnings for unused local variables
+		System.out.println(valueString + nullString + charSequence);
 	}
 
 }
