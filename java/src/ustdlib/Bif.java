@@ -57,7 +57,7 @@ BinaryOperator x1,x2 -> x3
 		return Group.indexOf(value);
 	}
 	public static int IndexOf(int c, @NonNull String s) {
-		return Group.indexOf(c);
+		return Str.indexOf(s, c);
 	}
 	
 	/**

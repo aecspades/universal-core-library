@@ -52,7 +52,7 @@ public final class CStr {
 	 * @see <a href="https://en.cppreference.com/w/cpp/string/byte/strchr">strchr</a> 
 	 */
 	public static @Nullable SubSequence strChr(@NonNull String str, int c) {
-		int x = Bif.IndexOf(c, str);
+		int x = Str.indexOf(str, c);
 		return x>=0 ? new SubSequence(str, x) : null;
 	}
 
