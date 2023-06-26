@@ -10,8 +10,8 @@ import org.eclipse.jdt.annotation.NonNull;
  * @author AndrewClark
  *
  */
-public final class Bif {
-	private Bif() {}
+public final class BIF {
+	private BIF() {}
 	
 	/*
 Supplier       ()    -> x

@@ -1,7 +1,7 @@
 package ustdlib;
 
-import static ustdlib.Bif.IndexOf;
-import static ustdlib.Bif.NullSafe;
+import static ustdlib.BIF.IndexOf;
+import static ustdlib.BIF.NullSafe;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadMXBean;

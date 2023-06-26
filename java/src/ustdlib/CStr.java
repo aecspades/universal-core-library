@@ -111,11 +111,11 @@ public final class CStr {
 	/**
 	 * String in string
 	 * @return Subsequence of <code>str1</code> at first occurrence of <code>str2</code>, or null if not found
-	 * @see Bif#IndexOf(String, String)
+	 * @see BIF#IndexOf(String, String)
 	 * @see <a href="https://en.cppreference.com/w/cpp/string/byte/strstr">strstr</a>
 	 */
 	public static @Nullable SubSequence strStr(@NonNull String str1, @NonNull String str2) {
-		int x = Bif.IndexOf(str2, str1);
+		int x = BIF.IndexOf(str2, str1);
 		return x>=0 ? new SubSequence(str1, x) : null;
 	}
 	
