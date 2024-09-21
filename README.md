@@ -1,2 +1,2 @@
-# universal-standard-library
-Universal standard library
+# universal-core-library
+Universal core library
