@@ -1,10 +1,8 @@
-package ustdlib.test;
+package uclib;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-
-import ustdlib.SubSequence;
 
 public class SubSequenceTest {
 

@@ -1,7 +1,4 @@
-package ustdlib;
-
-import static ustdlib.BIF.IndexOf;
-import static ustdlib.BIF.NullSafe;
+package uclib;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadMXBean;
@@ -9,10 +6,12 @@ import java.util.Optional;
 import java.util.Random;
 import java.util.function.Supplier;
 
+import static uclib.BIF.*;
+
 import org.eclipse.jdt.annotation.NonNull;
 
 
-public class Tester {
+public class Benchmark {
 	
 	static long LOOP_COUNT=10000000; // 10,000,00
 	static String NUMBER_FORMAT="%,d";
@@ -127,7 +126,8 @@ public class Tester {
 		nonNullString = NullSafe(valueString, nullString);
 		nonNullString = NullSafe(nullString, nullableString);
 		nonNullString = NullSafe(nullString, valueString);
-		*/
+		*/ 
+
 		nonNullString = NullSafe(nullString, 
 				() -> {return "";} );
 		
@@ -135,7 +135,7 @@ public class Tester {
 		System.out.println(nonNullString.length());
 		// Could throw NullPointerException (if args[0]=="null")
 		System.err.println(nullableString.length());
-		//Guaranteed to throw NullPointerException
+		//TODO: Guaranteed to throw NullPointerException
 		System.err.println(nullString.length());
 		
 		System.out.println(nonNullString);
