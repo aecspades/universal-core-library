@@ -1,4 +1,4 @@
-package ustdlib;
+package uclib;
 
 import org.eclipse.jdt.annotation.NonNull;
 

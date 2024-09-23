@@ -1,4 +1,4 @@
-package ustdlib;
+package uclib;
 
 import java.util.Iterator;
 
