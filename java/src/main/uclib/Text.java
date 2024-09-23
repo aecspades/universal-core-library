@@ -1,78 +1,86 @@
 package uclib;
 
 import java.util.Iterator;
+import java.util.regex.MatchResult;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 import org.eclipse.jdt.annotation.NonNull;
-import org.eclipse.jdt.annotation.Nullable;
 
 /**
- * A text string consisting of one or more Symbols
+ * A text string consisting of zero or more Symbols
  * @see Symbol
  * 
  * @author AndrewClark
  *
  */
-public class Text implements CharSequence, Iterable<Symbol> {
+public class Text extends Symbol implements CharSequence, Iterable<Symbol> {
 	
-	private String value;
-	private @Nullable Integer count;
+	private Long count;
+	
+	public static final Text NULL_TEXT = new Text();
 
 	public Text() {
 		value="";
-		count=0;
+		count=0L;
 	}
 	
 	public Text(@NonNull String value) {
 		this.value = value;
 	}
-	
-	@Override
-	public String toString() {
-		return value;
-	}
 
-	@Override
-	public int length() {
-		return value.length();
+	static public Text of(@NonNull String value) {
+		return value.equals("") ? NULL_TEXT : new Text(value);
+	}
+	
+	private Matcher valueMatcher;
+	private Matcher getMatcher() {
+		if (valueMatcher==null)
+			valueMatcher = Pattern.compile("\\X").matcher(value);
+		else
+			valueMatcher.reset();
+		return valueMatcher;
+	}
+	private Stream<MatchResult> getMatchResultStream() {
+		return getMatcher().results();
 	}
 	
 	/**
 	 * @return The number of Symbols in the Text
 	 */
-	public int count() {
-		//TODO: Calculate number of symbols in this string
-		if (count==null)
-			count = value.length();
-		
+	public long count() {
+		// Cache count
+		if (count == null)
+			count = getMatchResultStream().count();
 		return count;
 	}
 
-	@Override
-	public char charAt(int index) {
-		return value.charAt(index);
-	}
-
-	@Override
-	public CharSequence subSequence(int start, int end) {
-		return value.subSequence(start, end);
+	/**
+	 * @return The Symbol at the specified index
+	 */
+	public Symbol symbolAt(int index) {
+		return new Symbol(getMatchResultStream()
+				.skip(index)
+				.findFirst()
+				.get()
+				.group());
 	}
 	
-	class TextIterator implements Iterator<Symbol> {
-		Text text;
-		int currentIndex=0;
+	private class TextIterator implements Iterator<Symbol> {
+		Iterator<MatchResult> valueIterator;
 		
 		TextIterator(Text text) {
-			this.text = text;
+			valueIterator = text.getMatchResultStream().iterator();
 		}
 		
 		@Override
 		public boolean hasNext() {
-			return currentIndex < text.count(); 
+			return valueIterator.hasNext();
 		}
 		@Override
 		public Symbol next() {
-			//TODO: actual real iterator over symbols
-			return new Symbol(text.value.substring(currentIndex++));
+			return new Symbol(valueIterator.next().group());
 		}
 	}
 
